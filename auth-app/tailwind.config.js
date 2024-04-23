@@ -6,6 +6,10 @@ export default {
     extend: {
       fontFamily:{
         "Montserrat": "Montserrat",
+      },
+      colors: {
+        "active": '#28A4E3',
+        "disabled": '#798A94'
       }
     },
   },
