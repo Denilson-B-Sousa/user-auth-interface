@@ -42,34 +42,34 @@ export function Login() {
     
     return(
         <section className='flex flex-col justify-center items-center my-12'>
-            <h1 className='text-2xl  mb-8 font-Montserrat font-bold'>Login</h1>
-            <form onSubmit={handleSubmit(loginUser)} className='inline-flex flex-col gap-1 bg-white p-4 rounded-sm'>
+            <span className='text-white text-2xl text-center font-Montserrat mb-8 '><span className="text-5xl font-bold ">Olá,</span> <br/><br/>Faça o login para iniciar a sessão</span>
+            <form onSubmit={handleSubmit(loginUser)} className='inline-flex flex-col gap-1 bg-white p-6 rounded-md w-96'>
               <label>
                 <span>Email:</span>
               </label>
                 <input 
                   type="email" 
                   placeholder='exemplo@gmail.com' 
-                  className='border-2 border-slate-200 outline-slate-600 rounded-md p-1' 
+                  className='border-2 border-slate-200 outline-slate-600 rounded-md p-2 w-80' 
                   {...register("email")}
                   
                 />
 
                 {errors.email && <span className="text-red-600 text-sm">{errors.email.message}</span>}
 
-              <label className='inline-flex gap-16'>
-                <span className=''>Password:</span>
+              <label className='inline-flex gap-32'>
+                <span className=''>Senha:</span>
                 <a href="recovery" className='text-blue-600'>Esqueceu a senha?</a>
               </label>
               <input 
                 type="password" 
-                className='border-2 border-slate-200 outline-slate-600 rounded-md p-1' 
+                className='border-2 border-slate-200 outline-slate-600 rounded-md p-2 w-80' 
                 {...register("password")}
                 onChange={handleChangeStyles}
               />
               {errors.password && <span className="text-red-600 text-sm">{errors.password.message}</span>}
-              <button disabled={!buttonEnabled} className={active === "active" ? `bg-blue-600 py-1 px-2 mt-4 mb-4 rounded-md text-white cursor-pointer` : `bg-disabled py-1 px-2 mt-4 mb-4 rounded-md text-white cursor-not-allowed`}>Login</button>
-              <p className='inline-flex gap-1 text-sm'>Não tem uma conta? <a href="sign-up" className='text-blue-600'>Crie nova conta</a></p>
+              <button disabled={!buttonEnabled} className={active === "active" ? `bg-blue-600 py-1 px-2 mt-4 mb-4 rounded-md text-white cursor-pointer` : `bg-disabled py-2 px-2 mt-4 mb-4 rounded-md text-white cursor-not-allowed`}>Login</button>
+              <p className='inline-flex gap-1 text-base font-semibold'>Não tem uma conta? <a href="sign-up" className='text-blue-600'> Crie nova conta</a></p>
             </form>
             <pre>
               {output}

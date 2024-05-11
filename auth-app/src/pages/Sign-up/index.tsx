@@ -56,9 +56,9 @@ export function SignUp() {
 
     return(
         <section className='flex flex-col justify-center items-center my-8'>
-             <h1 className='text-2xl text- mb-8 font-Montserrat font-bold'>Cadastre-se</h1>
+             <h1 className='text-4xl text-white mb-8 font-Montserrat font-bold'>Cadastre-se</h1>
             <form 
-              className='inline-flex flex-col gap-1 bg-white p-4 rounded-sm'
+              className='inline-flex flex-col w-96  gap-1 bg-slate-100 p-8 rounded-md'
               onSubmit={handleSubmit(createUser)}
             >
               <label htmlFor="name">
@@ -68,7 +68,7 @@ export function SignUp() {
                   type="text" 
                   maxLength={100} 
                   placeholder='José da Silva' 
-                  className='border-2 border-slate-200 outline-slate-600 rounded-md p-1' 
+                  className='border-2 border-slate-200 outline-slate-600/80 rounded-md p-2 w-80' 
                   {...register("name")}
                 />
                 {errors.name && <span className="text-red-600 text-xs">*{errors.name.message}</span>}
@@ -79,18 +79,17 @@ export function SignUp() {
                 <input 
                   type="email" 
                   placeholder='exemplo@gmail.com' 
-                  className='border-2 border-slate-200 outline-slate-600 rounded-md p-1' 
+                  className='border-2 border-slate-200 outline-slate-600/80  rounded-md p-2' 
                   {...register("email")} // campo name colocado automáticamente 
                 />
                 {errors.email && <span className="text-red-600 text-xs">*{errors.email.message}</span>}
 
-              <label htmlFor="password" className='inline-flex gap-16'>
+              <label htmlFor="password" className='inline-flex gap-32'>
                 <span className=''>Senha:</span>
-                <a href="recovery" className='text-blue-600'>Esqueceu a senha?</a>
               </label>
               <input 
                 type="password" 
-                className='border-2 border-slate-200 outline-slate-600 rounded-md  p-1' 
+                className='border-2 border-slate-200 outline-slate-600/80 rounded-md  p-2' 
                 {...register("password")}
               />
                 {errors.password && <span className="text-red-600 text-xs">*{errors.password.message}</span>}
@@ -100,14 +99,14 @@ export function SignUp() {
               </label>
                 <input 
                   type="password" 
-                  className='border-2 border-slate-200 outline-slate-600 rounded-md  p-1' 
+                  className='border-2 border-slate-200 outline-slate-600/80 rounded-md  p-2' 
                   {...register("confirmPassword")}
                   onChange={handleChangeStyles}
                 /> 
                 {errors.confirmPassword && <span className="text-red-600 text-xs">*{errors.confirmPassword.message}</span>}
  
-              <button disabled={!buttonEnabled} className={ buttonEnabled === true ? 'bg-blue-600 py-1 px-2 my-4 rounded-md text-white ' : 'bg-disabled py-1 px-2 mt-4 mb-4 rounded-md text-white cursor-not-allowed'}>Login</button>
-              <p className='inline-flex gap-1 text-sm'>Já possui uma conta? <a href="login" className='text-blue-600'>login</a></p>
+              <button disabled={!buttonEnabled} className={ buttonEnabled === true ? 'bg-blue-600 py-1 px-2 my-4 rounded-md text-white ' : 'bg-disabled py-2 px-2 mt-4 mb-4 rounded-md text-white cursor-not-allowed'}>Cadastre-se</button>
+              <p className='inline-flex items-center gap-1 text-sm font-semibold'>Já possui uma conta? <a href="login" className='text-blue-600 text-base'>login</a></p>
             </form>
 
             <pre>
